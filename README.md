@@ -1,2 +1,4 @@
 # d3_prac
-learn and practice d3 js
+Learn and practice d3 js (> 4.0.0).
+
+Use webpack to facilitate dev/debug process.

@@ -8,11 +8,16 @@ var dataset = _.map(_.range(25), function (i) {
     return Math.random() * 30;
 })
 
-var w = 400, h = 300;
+var margin = {bottom: 20, right: 0, top: 50, left: 10};
+
+var w = 400 - margin.left - margin.right,
+    h = 300 - margin.top - margin.bottom;
 
 var svg = d3.select('#chartArea').append('svg')
-    .attr('width', w)
-    .attr('height', h);
+    .attr('width', w + margin.left + margin.right)
+    .attr('height', h + margin.top + margin.bottom)
+    .append('g')
+    .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
 
 var xScale = d3.scaleBand()
     .domain(dataset)
