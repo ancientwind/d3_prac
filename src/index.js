@@ -24,9 +24,13 @@ var yScale = d3.scaleLinear()
     .domain([0,d3.max(dataset)*1.1])
     .range([0,h]);
 
-var colorScale = d3.scaleLinear()
-    .domain([0, d3.max(dataset)])
-    .range(['yellow', 'green']);
+// var colorScale = d3.scaleQuantize()
+//     .domain([0, dataset.length])
+//     .range(['yellow', 'green', 'blue']);
+
+    var colorScale = d3.scaleQuantile()
+        .domain([0, dataset.length / 3, dataset.length / 3 * 2 ,  dataset.length])
+        .range(['yellow', 'green', 'blue']);
 
 svg.selectAll('rect')
     .data(dataset)
@@ -43,6 +47,9 @@ svg.selectAll('rect')
     .style('height', function (d) {
         return yScale(d);
     })
-    .attr('fill', colorScale) //short form to pass function of colorscale
+    // .attr('fill', colorScale) //short form to pass function of colorscale
+    .attr('fill', function (d, i) {
+        return colorScale(i);
+    })
 ;
 
