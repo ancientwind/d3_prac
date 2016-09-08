@@ -1,0 +1,25 @@
+{
+  "name": "d3-prac",
+  "version": "1.0.0",
+  "description": "learn and practice d3 js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack-dev-server --devtool source-map --host 0.0.0.0 --port 3000 --hot --inline --colors --progress"
+  },
+  "keywords": [
+    "d3"
+  ],
+  "author": "wayne.zeng",
+  "license": "ISC",
+  "dependencies": {
+    "d3": "^4.2.2"
+  },
+  "devDependencies": {
+    "lodash": "^4.15.0",
+    "css-loader": "^0.25.0",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.13.2",
+    "webpack-dev-server": "^1.15.1"
+  }
+}
